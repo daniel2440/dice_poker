@@ -13,7 +13,8 @@ class App extends React.Component {
         pointsTable: [0, 0, 0],
         cosik: 'hej',
         show: false,
-        send: [0, 0]
+        send: [0, 0],
+        k:false
     };
 
     handlePointsChange = p => {
@@ -23,6 +24,15 @@ class App extends React.Component {
     };
 
     handleOverChange = p => {
+        this.setState({over: p});
+
+    };
+    handleNewGameChange = p => {
+        this.setState({newGame: p});
+        this.setState({over: 0});
+    };
+
+    overGame=()=>{
         let pointsModal = this.state.pointsTable;
         let res = 0;
         let ii=0;
@@ -33,12 +43,9 @@ class App extends React.Component {
             }
         }
         this.setState({send: [ii,res]});
-        this.setState({over: p});
+        let newOver=this.state.over+1;
+        this.setState({over:newOver});
 
-    };
-    handleNewGameChange = p => {
-        this.setState({newGame: p});
-        this.setState({over: 0});
     };
 
     render() {
@@ -48,7 +55,7 @@ class App extends React.Component {
                     newGam={this.state.newGame}
                     winner={this.state.send[0]}
                     pointsWin={this.state.send[1]}
-                    show={this.state.over === 3}
+                    show={this.state.over === 4}
                     onNewGameChange={this.handleNewGameChange}
 
                 />
@@ -73,6 +80,9 @@ class App extends React.Component {
                         points={this.state.pointsTable[2]}
                         onPointsChange={this.handlePointsChange}
                 />
+                <div className={this.state.over===3?"Appe":"Appen"}>
+                    <button onClick={this.state.over===3?this.overGame:console.log()}>Over</button>
+                </div>
             </div>
         );
     }

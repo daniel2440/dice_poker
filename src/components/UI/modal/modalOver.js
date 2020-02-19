@@ -18,9 +18,12 @@ class Modal extends React.Component{
         this.props.onNewGameChange(this.state.newGame);
     };
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps,prevState) {
         if (prevProps.winner !== this.props.winner) {
             this.setState({winner: this.props.winner});
+        }
+        if (prevState.winner!==this.state.winner){
+            this.setState({winner:this.props.winner})
         }
     }
 
@@ -34,7 +37,7 @@ class Modal extends React.Component{
                          opactity: this.props.show?'1':'0'
                      }}>
                     {this.props.children}
-                    <p>The winner is <strong> Player {this.props.winner+1}</strong> with <strong>{this.props.pointsWin} points</strong></p>
+                    <p>The winner is <strong> Player {this.state.winner+1}</strong> with <strong>{this.props.pointsWin} points</strong></p>
                     <button onClick={this.handleNewGameChange}>Nowa gra</button>
                 </div>
                 <Backdrop show={this.props.show}/>
