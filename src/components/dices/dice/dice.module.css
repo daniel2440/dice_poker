@@ -1,0 +1,13 @@
+.Dice{
+    margin: 10px 20px;
+    box-sizing: content-box;
+    padding: 2px;
+}
+
+.DiceChange{
+    padding: 2px;
+    -webkit-box-shadow:inset 0px 0px 0px 10px #ff6e66;
+    -moz-box-shadow:inset 0px 0px 0px 10px #ff6e66;
+    box-shadow:inset 0px 0px 0px 10px #ff6e66;
+    margin: 10px 20px;
+}
