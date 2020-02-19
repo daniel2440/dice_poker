@@ -1,22 +1,9 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
-// import Dices from "./components/dices/dices";
 import Player from "./components/Player/player";
 import Modal from './components/UI/modal/modalOver'
 
 
-let listOfPlayers = [];
-const createPlayers = (playersNum, over) => {
-    let result;
-    let i = 1;
-    while (i < playersNum + 1) {
-        result = <Player ove={over} num={i} key={i}/>;
-        listOfPlayers.push(result);
-        i++;
-    }
-    return result;
-};
 
 class App extends React.Component {
 
@@ -33,7 +20,6 @@ class App extends React.Component {
         let table = this.state.pointsTable;
         table[p[1]] = p[0];
         this.setState({pointsTable: table});
-        console.log(this.state.pointsTable);
     };
 
     handleOverChange = p => {

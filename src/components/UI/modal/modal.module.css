@@ -30,4 +30,11 @@
     border-style: none;
     width: 30%;
     background-color: #61dafb;
+    outline: 0;
+}
+
+.Modal button:active{
+    border-style: solid;
+    border-width: thin;
+    border-color: dodgerblue;
 }

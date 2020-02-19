@@ -25,7 +25,6 @@ class Modal extends React.Component{
     }
 
     render() {
-        console.log('points: '+this.props.winner);
         return(
             <Auxiliary>
                 <div className={styles.Modal}
