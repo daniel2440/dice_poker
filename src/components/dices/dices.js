@@ -21,7 +21,6 @@ class Dices extends React.Component {
             let da=['0', '0', '0', '0', '0'];
             let a=[false, false, false, false, false];
             this.setState({active:a});
-            console.log(this.state.active);
             this.setState({figure: 'None'});
             this.setState({diceArray:da});
             this.handlePointsChange(0)
